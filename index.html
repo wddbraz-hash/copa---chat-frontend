@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hub de Perguntas & Respostas - Copa do Mundo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-trophy"></i>
+            <h1>CopaPedia</h1>
+        </div>
+        <p class="subtitle">Perguntas, Respostas e Estatísticas Históricas da Copa do Mundo</p>
+    </header>
+
+    <main class="container">
+        
+        <!-- Seção de Busca e Pergunta Livre (Conectada ao app.js -> Flask -> Groq) -->
+        <section class="card-box">
+            <h2><i class="fa-solid fa-magnifying-glass"></i> Consultar História da Copa</h2>
+            <div class="search-group">
+                <input type="text" id="campoPergunta" placeholder="Ex: Quem marcou o gol do título de 2002? Quem foi o campeão de 1970?">
+                <button id="btnConsultar" onclick="buscarResposta()"><i class="fa-solid fa-paper-plane"></i> Pesquisar</button>
+            </div>
+            
+            <div id="loading" class="status-box hidden">
+                <i class="fa-solid fa-circle-notch fa-spin"></i> Consultando Inteligência Artificial...
+            </div>
+
+            <div id="painelResposta" class="resposta-box hidden">
+                <h3 id="tituloPergunta"></h3>
+                <p id="textoResposta"></p>
+                <div class="fonte-badge"><i class="fa-solid fa-shield-halved"></i> Fonte: API Groq (Llama 3.3) / Registros Oficiais da FIFA</div>
+            </div>
+        </section>
+
+        <!-- Seção de Perguntas Frequentes / Destaques -->
+        <section class="card-box">
+            <h2><i class="fa-solid fa-list-check"></i> Perguntas em Destaque</h2>
+            <p class="section-desc">Clique em qualquer pergunta abaixo para carregar a resposta:</p>
+            
+            <div id="listaPerguntas" class="grid-perguntas">
+                <!-- Inserido dinamicamente via app.js -->
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>CopaPedia &copy; 2026 - Integrado com Backend Python (Flask) e API do Groq.</p>
+    </footer>
+
+    <!-- Importação correta do arquivo app.js -->
+    <script src="app.js"></script>
+</body>
+</html>

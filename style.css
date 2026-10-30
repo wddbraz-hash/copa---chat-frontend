@@ -1,0 +1,197 @@
+/* Configuração Global */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0b132b;
+    color: #f4f4f9;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Cabeçalho */
+header {
+    background: linear-gradient(135deg, #1c2541, #0b132b);
+    padding: 2rem 1rem;
+    text-align: center;
+    border-bottom: 3px solid #ffc529;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.logo i {
+    font-size: 2.2rem;
+    color: #ffc529;
+}
+
+.logo h1 {
+    font-size: 2.2rem;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+.subtitle {
+    color: #8da9c4;
+    margin-top: 6px;
+    font-size: 1rem;
+}
+
+/* Layout Principal */
+.container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    width: 100%;
+    flex: 1;
+}
+
+.card-box {
+    background-color: #1c2541;
+    border-radius: 12px;
+    padding: 1.8rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    border: 1px solid #3a506b;
+}
+
+.card-box h2 {
+    font-size: 1.3rem;
+    color: #ffc529;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-desc {
+    color: #c5d3e8;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+/* Formulário de Busca */
+.search-group {
+    display: flex;
+    gap: 10px;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1px solid #3a506b;
+    background-color: #0b132b;
+    color: #ffffff;
+    font-size: 1rem;
+    outline: none;
+}
+
+input[type="text"]:focus {
+    border-color: #ffc529;
+}
+
+button#btnConsultar {
+    background-color: #00b4d8;
+    color: #0b132b;
+    font-weight: bold;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+button#btnConsultar:hover {
+    background-color: #90e0ef;
+}
+
+/* Estados de Carregamento e Resposta */
+.status-box {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #0b132b;
+    border-radius: 8px;
+    color: #ffc529;
+    text-align: center;
+}
+
+.resposta-box {
+    margin-top: 1.5rem;
+    padding: 1.2rem;
+    background-color: #0b132b;
+    border-left: 4px solid #ffc529;
+    border-radius: 0 8px 8px 0;
+}
+
+.resposta-box h3 {
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.resposta-box p {
+    color: #d1d5db;
+    line-height: 1.6;
+}
+
+.fonte-badge {
+    margin-top: 0.8rem;
+    font-size: 0.8rem;
+    color: #00b4d8;
+}
+
+/* Grid de Perguntas Rápidas */
+.grid-perguntas {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+@media (min-width: 600px) {
+    .grid-perguntas {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.item-pergunta {
+    background-color: #0b132b;
+    border: 1px solid #3a506b;
+    padding: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: border-color 0.2s, transform 0.1s;
+}
+
+.item-pergunta:hover {
+    border-color: #ffc529;
+    transform: translateY(-2px);
+}
+
+.item-pergunta h4 {
+    color: #ffffff;
+    font-size: 0.95rem;
+}
+
+/* Utilidades */
+.hidden {
+    display: none;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #0b132b;
+    color: #6c757d;
+    font-size: 0.85rem;
+    border-top: 1px solid #1c2541;
+}
